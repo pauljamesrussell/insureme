@@ -4,11 +4,14 @@ body.controller_profiles.action_show {
     background-image: image-url('profilebg.jpg');
     margin-top: -70px;
     padding-top: 70px;
+    text-align: center;
   }
 
   .imagebg#motor {
-    background-color: red;
-    border-radius: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('motorbg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    border-top: 1px solid white;
   }
 
   .imagebg {
@@ -26,9 +29,11 @@ body.controller_profiles.action_show {
   }
 
   .panel-heading {
-    height: 80px;
+    height: 120px;
     padding-bottom: 0px;
     padding-top: 0px;
-    h1 { line-height: 80px; font-size: 32px; }
+    h1 { line-height: 120px; font-size: 32px; }
+    .icon { line-height: 120px; text-align: right; }
   }
+
 }

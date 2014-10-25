@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <form class="form-inline">
-          <p class="lead low-profile large">
+          <p class="lead low-profile low-profile-large">
             I am
             <input type="text" class="form-control auto-grow" placeholder="first name" data-bind="value: first_name, valueUpdate: 'afterkeydown', attr: {size: first_name().length || 'first name'.length}">
             <input type="text" class="form-control auto-grow" placeholder="surname" data-bind="value: surname, valueUpdate: 'afterkeydown', attr: {size: surname().length || 'surname'.length}">,
@@ -37,11 +37,38 @@
     <div class="container">
       <div class="panel-heading">
         <div class="row">
+          <div class="col-md-2 icon">
+            <%= image_tag("policy_icons/motoricon.png") %>
+          </div>
           <h1 class="panel-title" data-toggle="collapse" href="#motor-detail">Protect my car</h4>
         </div>
       </div>
       <div id="motor-detail" class="panel-collapse collapse">
-        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS</p>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <form class="form-inline">
+              <p class="lead low-profile low-profile-small">
+                I want to insure
+                <select class="form-control" data-bind="value: number_cars">
+                  <option value="1" select>my car</option>
+                  <option value="2">two cars</option>
+                  <option value="3">three cars</option>
+                  <option value="4">four cars</option>
+                  <option value="5">five cars</option>
+                </select>.
+                My registration number is
+                <input type="text" class="form-control auto-grow" placeholder="registration number" data-bind="value: reg_number, valueUpdate: 'afterkeydown', attr: {size: reg_number().length || 'registration number'.length}">
+                I want
+                <select class="form-control" data-bind="value: cover_level">
+                  <option value="comprehensive" select>comprehensive</option>
+                  <option value="tpft">third party, fire and theft</option>
+                </select>
+                cover. 
+                I would like my cover to start <input type="text" class="form-control auto-grow" placeholder="mm/dd/yyyy" data-bind="value: cover_start, valueUpdate: 'afterkeydown', attr: {size: cover_start().length || 'mm/dd/yyyy'.length}">.
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

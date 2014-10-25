@@ -13,6 +13,7 @@ class Profile
     @household_size   = ko.observable("")
 
     @motor            = InsureMe.InsuredObjectFactory.motor()
+    @home             = InsureMe.InsuredObjectFactory.home()
 
     @image_large      = ko.computed => @image() + "?type=large"
     

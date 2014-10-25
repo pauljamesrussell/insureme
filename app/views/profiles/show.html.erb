@@ -91,7 +91,53 @@
       </div>
     </div>
   </div>
-
+  <div class="imagebg" id="home" data-bind="with: home">
+    <div class="container">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-2 icon">
+            <%= image_tag("policy_icons/buildingicon.png") %>
+          </div>
+          <h1 class="panel-title" data-toggle="collapse" href="#home-detail">Protect my home</h4>
+        </div>
+      </div>
+      <div id="home-detail" class="panel-collapse collapse">
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <form class="form-inline">
+              <p class="lead low-profile low-profile-small">
+                I want
+                <select class="form-control" data-bind="value: cover_level">
+                  <option value="buildings">building only cover</option>
+                  <option value="building_and_contents" select>building and contents cover</option>
+                  <option value="contents">contents cover</option>
+                </select>
+                cover for my
+                <select class="form-control" data-bind="value: property">
+                  <option value="main_home">home</option>
+                  <option value="second_home" select>second home</option>
+                </select>
+                which I <select class="form-control" data-bind="value: ownership">
+                  <option value="rent">rent</option>
+                  <option value="own" select>own</option>
+                </select>. 
+                I occupy my property during the
+                <select class="form-control" data-bind="value: occupied">
+                  <option value="day">day</option>
+                  <option value="night" select>night</option>
+                  <option value="both" select>night and day</option>
+                </select>
+                and have made 
+                <input type="text" class="form-control auto-grow" placeholder="claims" data-bind="value: claims, valueUpdate: 'afterkeydown', attr: {size: claims().length || 'claims'.length}">
+                claims in the last five years. 
+                I would like my cover to start <input type="text" class="form-control auto-grow" placeholder="mm/dd/yyyy" data-bind="value: cover_start, valueUpdate: 'afterkeydown', attr: {size: cover_start().length || 'mm/dd/yyyy'.length}">.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <div>
 
 <script type="text/javascript">

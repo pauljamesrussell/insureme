@@ -6,6 +6,11 @@ class InsuredObjectFactory
     motor.cover_level("comprehensive")
     return motor
 
+  @home: ->
+    home = new InsureMe.InsuredObject('home',['cover_level','property','ownership','occupied','claims'])
+    home.claims("0")
+    return home
+
 
 window.InsureMe = window.InsureMe || {};
 window.InsureMe.InsuredObjectFactory = InsuredObjectFactory

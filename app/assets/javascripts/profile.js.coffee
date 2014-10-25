@@ -1,12 +1,12 @@
 class Profile
   constructor: ->
-    @first_name       = ko.observable()
-    @surname          = ko.observable()
-    @image            = ko.observable()
-    @age              = ko.observable()
-    @gender           = ko.observable()
-    @address          = ko.observable()
-    @maritalStatus    = ko.observable()
+    @first_name       = ko.observable("")
+    @surname          = ko.observable("")
+    @image            = ko.observable("")
+    @age              = ko.observable("21")
+    @gender           = ko.observable("")
+    @address          = ko.observable("")
+    @maritalStatus    = ko.observable("")
 
 
     @image_large      = ko.computed => @image() + "?type=large"

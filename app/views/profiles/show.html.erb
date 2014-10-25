@@ -8,16 +8,16 @@
         <form class="form-inline">
           <p class="lead low-profile">
             I am
-            <input type="text" class="form-control auto-grow" placeholder="first name" data-bind="value: first_name">
-            <input type="text" class="form-control auto-grow" placeholder="surname" data-bind="value: surname">,
+            <input type="text" class="form-control auto-grow" placeholder="first name" data-bind="value: first_name, valueUpdate: 'afterkeydown', attr: {size: first_name().length / 2}">
+            <input type="text" class="form-control auto-grow" placeholder="surname" data-bind="value: surname, valueUpdate: 'afterkeydown', attr: {size: surname().length}">,
             I am
-            <input type="text" class="form-control auto-grow" placeholder="age" data-bind="value: age">
+            <input type="text" class="form-control auto-grow" placeholder="age" data-bind="value: age, valueUpdate: 'afterkeydown', attr: {size: age().length}">
             years old and 
-            <input type="text" class="form-control auto-grow" placeholder="gender" data-bind="value: gender">.
+            <input type="text" class="form-control auto-grow" placeholder="gender" data-bind="value: gender, valueUpdate: 'afterkeydown', attr: {size: gender().length}">.
             I live at
-            <input type="text" class="form-control auto-grow" placeholder="address" data-bind="value: address">.
+            <input type="text" class="form-control auto-grow" placeholder="address" data-bind="value: address, valueUpdate: 'afterkeydown', attr: {size: address().length}">.
             I am
-            <input type="text" class="form-control auto-grow" placeholder="marital status" data-bind="value: maritalStatus">.
+            <input type="text" class="form-control auto-grow" placeholder="marital status" data-bind="value: maritalStatus, valueUpdate: 'afterkeydown', attr: {size: maritalStatus().length}">.
             My email address is [email] or you can call me at [phone].
             I am a [job].
           </p>

@@ -38,3 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+gem 'pry', group: :development # Pry for debugging.

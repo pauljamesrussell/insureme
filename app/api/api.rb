@@ -23,4 +23,12 @@ class API < Grape::API
       current_user
     end
   end
+  
+  resource :insurances do
+    desc "Return the user's insurances"
+    get do
+      current_user.insurances
+    end
+  end
+  
 end

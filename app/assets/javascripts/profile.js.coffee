@@ -7,6 +7,9 @@ class Profile
     @gender           = ko.observable("")
     @address          = ko.observable("")
     @maritalStatus    = ko.observable("")
+    @email            = ko.observable("")
+    @phone            = ko.observable("")
+    @job              = ko.observable("")
 
 
     @image_large      = ko.computed => @image() + "?type=large"
@@ -21,6 +24,7 @@ class Profile
     @first_name(data['first_name'])
     @surname(data['surname'])
     @image(data['image'])
+    @email(data['email'])
 
 window.InsureMe = window.InsureMe || {};
 window.InsureMe.Profile = Profile

@@ -1,0 +1,30 @@
+body.controller_welcome {
+  background-image: image-url('mainbackgroundpicture.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+
+  div.jumbotron {
+    background: none;
+    color: white;
+    text-align: center;
+    input.text,input.password {
+      width: 120px;
+    }
+  }
+
+  .navbar { 
+    background: none;
+    border: none;
+    a {
+      color: white;  
+    }
+    a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    li.active > a {
+      background-color: #428bca;
+      color: white;
+    }
+  }
+}

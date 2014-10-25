@@ -11,12 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025203530) do
+ActiveRecord::Schema.define(version: 20141025212512) do
 
   create_table "insurance_details", force: true do |t|
     t.integer  "insurance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "value"
   end
 
   add_index "insurance_details", ["insurance_id"], name: "index_insurance_details_on_insurance_id"

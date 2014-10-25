@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount API => '/api'
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resource :profile
@@ -61,4 +63,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root 'welcome#index'
+  
 end

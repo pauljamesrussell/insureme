@@ -1,8 +1,12 @@
 <form class="form-inline">
   <p>
     My name is
-    <input type="text" class="form-control" placeholder="first name">
-    <input type="text" class="form-control" placeholder="surname">
+    <input type="text" class="form-control" placeholder="first name" data-bind="value: first_name">
+    <input type="text" class="form-control" placeholder="surname" data-bind="value: surname">
     ...
   </p>
 </form>
+
+<script type="text/javascript">
+  ko.applyBindings(new InsureMe.Profile());
+</script>

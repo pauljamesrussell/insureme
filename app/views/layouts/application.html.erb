@@ -38,15 +38,20 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../navbar/">Default</a></li>
-        <li><a href="../navbar-static-top/">Static top</a></li>
-        <li class="active"><a href="./">Fixed top</a></li>
+        <% if user_signed_in? %>
+          <li><a href="./">Sign out</a></li>
+        <% else %>
+          <li><a href="./">Fixed top</a></li>
+        <% end %>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
 
 <div class="container">
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: ['alert', convert_rails_notice_type_to_bootstrap_class(name)] %>
+  <% end -%>
   <%= yield %>
 </div>
 

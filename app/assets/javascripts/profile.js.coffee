@@ -11,6 +11,7 @@ class Profile
     @phone            = ko.observable("")
     @job              = ko.observable("")
 
+    @motor            = InsureMe.InsuredObjectFactory.motor()
 
     @image_large      = ko.computed => @image() + "?type=large"
     

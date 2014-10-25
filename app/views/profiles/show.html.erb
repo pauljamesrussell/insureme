@@ -1,4 +1,4 @@
-<div class="imagebg">
+<div class="imagebg" id="top-level">
   <%= render partial: 'layouts/navigation' %>
 
   <div class="container">
@@ -28,8 +28,26 @@
         </form>
       </div>
     </div>
-    <script type="text/javascript">
-      ko.applyBindings(new InsureMe.Profile());
-    </script>
   </div>
 </div>
+
+<div id="products">
+
+  <div class="imagebg" id="motor" data-bind="with: motor">
+    <div class="container">
+      <div class="panel-heading">
+        <div class="row">
+          <h1 class="panel-title" data-toggle="collapse" href="#motor-detail">Protect my car</h4>
+        </div>
+      </div>
+      <div id="motor-detail" class="panel-collapse collapse">
+        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS</p>
+      </div>
+    </div>
+  </div>
+
+<div>
+
+<script type="text/javascript">
+  ko.applyBindings(new InsureMe.Profile());
+</script>

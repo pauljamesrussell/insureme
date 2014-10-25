@@ -1,10 +1,19 @@
 body.controller_profiles.action_show {
-  .imagebg {
+
+  .imagebg#top-level {
     background-image: image-url('profilebg.jpg');
-    background-attachment: fixed;
-    background-size: cover;
     margin-top: -70px;
     padding-top: 70px;
+  }
+
+  .imagebg#motor {
+    background-color: red;
+    border-radius: none;
+  }
+
+  .imagebg {
+    background-attachment: fixed;
+    background-size: cover;
   }
 
   img.profile-image {
@@ -14,5 +23,12 @@ body.controller_profiles.action_show {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
+  }
+
+  .panel-heading {
+    height: 80px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    h1 { line-height: 80px; font-size: 32px; }
   }
 }

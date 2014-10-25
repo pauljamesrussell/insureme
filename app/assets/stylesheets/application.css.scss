@@ -6,3 +6,23 @@ body {
   min-height: 2000px;
   padding-top: 70px;
 }
+
+.imagebg {
+  color: white;
+
+  div.jumbotron {
+    background: none;
+    text-align: center;
+  }
+
+  .low-profile {
+    input[type='text'],input[type='email'],input[type='password'] {
+      background: none;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      border-bottom: 1px solid white;
+      color: white;
+    }
+  }
+}

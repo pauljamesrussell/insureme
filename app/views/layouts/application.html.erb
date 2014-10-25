@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Insure Me</title>
+  <title>InsureMe</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,7 +17,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Insure Me</a>
+      <a class="navbar-brand" href="/">
+        Insure<b><%= if user_signed_in? then current_user.first_name else "Me" end %></b>
+      </a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">

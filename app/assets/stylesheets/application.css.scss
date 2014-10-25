@@ -17,6 +17,18 @@ body {
   }
 
   .low-profile {
+    &.large {
+      font-size: 32px;
+      line-height: 42px;
+      input {
+        font-size: 32px;
+        height: 32px + 10px;
+        width: auto;
+        padding: 0px;
+        padding-bottom: 5px;
+        margin-top: -10px;
+      }
+    }
     input[type='text'],input[type='email'],input[type='password'] {
       background: none;
       border: none;
@@ -30,16 +42,6 @@ body {
       &:-moz-placeholder { color: #DDD; }
     }
     text-align: center;
-
-    font-size: 36pt;
-    input {
-      font-size: 36pt;
-      height: 60px;
-      width: auto;
-      padding: 0px;
-      padding-bottom: 5px;
-      margin-top: -15pt;
-    }
   }
 
   .navbar { 

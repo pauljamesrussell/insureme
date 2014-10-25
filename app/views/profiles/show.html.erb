@@ -1,12 +1,31 @@
-<form class="form-inline">
-  <p>
-    My name is
-    <input type="text" class="form-control" placeholder="first name" data-bind="value: first_name">
-    <input type="text" class="form-control" placeholder="surname" data-bind="value: surname">
-    ...
-  </p>
-</form>
+<div class="imagebg">
+  <%= render partial: 'layouts/navigation' %>
 
-<script type="text/javascript">
-  ko.applyBindings(new InsureMe.Profile());
-</script>
+  <div class="container">
+    <img data-bind="attr: {src: image_large}" class="profile-image">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <form class="form-inline">
+          <p class="lead low-profile">
+            I am
+            <input type="text" class="form-control auto-grow" placeholder="first name" data-bind="value: first_name">
+            <input type="text" class="form-control auto-grow" placeholder="surname" data-bind="value: surname">,
+            I am
+            <input type="text" class="form-control auto-grow" placeholder="age" data-bind="value: age">
+            years old and 
+            <input type="text" class="form-control auto-grow" placeholder="gender" data-bind="value: gender">.
+            I live at
+            <input type="text" class="form-control auto-grow" placeholder="address" data-bind="value: address">.
+            I am
+            <input type="text" class="form-control auto-grow" placeholder="marital status" data-bind="value: maritalStatus">.
+            My email address is [email] or you can call me at [phone].
+            I am a [job].
+          </p>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">
+      ko.applyBindings(new InsureMe.Profile());
+    </script>
+  </div>
+</div>

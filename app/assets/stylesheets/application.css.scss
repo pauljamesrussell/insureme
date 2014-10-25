@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "home_page";
+@import "profile_page";
 
 body {
   min-height: 2000px;
@@ -23,6 +24,36 @@ body {
       border-radius: 0;
       border-bottom: 1px solid white;
       color: white;
+      &::-webkit-input-placeholder { color: #DDD; }
+      &::-moz-placeholder { color: #DDD; } /* firefox 19+ */
+      &:-ms-input-placeholder { color: #DDD; } /* ie */
+      &:-moz-placeholder { color: #DDD; }
+    }
+
+    font-size: 36pt;
+    input {
+      font-size: 36pt;
+      height: 36px + 18px;
+      width: auto;
+      padding: 0px;
+      padding-bottom: 5px;
+      margin-top: -18pt;
+    }
+  }
+
+  .navbar { 
+    background: none;
+    border: none;
+    a {
+      color: white !important;  
+    }
+    a:hover {
+      color: white !important;
+      text-decoration: underline;
+    }
+    li.active > a {
+      background-color: #428bca;
+      color: white !important;
     }
   }
 }

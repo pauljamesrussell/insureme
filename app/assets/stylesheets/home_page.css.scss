@@ -8,20 +8,4 @@ body.controller_welcome {
       width: 120px;
     }
   }
-
-  .navbar { 
-    background: none;
-    border: none;
-    a {
-      color: white;  
-    }
-    a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-    li.active > a {
-      background-color: #428bca;
-      color: white;
-    }
-  }
 }

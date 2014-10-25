@@ -41,6 +41,13 @@ body {
         padding-bottom: 5px;
         margin-top: -10px;
       }
+      select {
+        font-size: 32px;
+        height: 32px + 10px;
+        padding: 0px;
+        padding-bottom: 5px;
+        margin-top: -10px;
+      }
     }
     input[type='text'],input[type='email'],input[type='password'] {
       background: none;

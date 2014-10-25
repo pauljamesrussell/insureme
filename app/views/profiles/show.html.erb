@@ -13,14 +13,33 @@
             I am
             <input type="text" class="form-control auto-grow" placeholder="age" data-bind="value: age, valueUpdate: 'afterkeydown', attr: {size: age().length || 'age'.length}">
             years old and 
-            <input type="text" class="form-control auto-grow" placeholder="gender" data-bind="value: gender, valueUpdate: 'afterkeydown', attr: {size: gender().length || 'gender'.length}">.
-            I live at
+            <select class="form-control" data-bind="value: gender">
+              <option value="male" select>male</option>
+              <option value="female">female</option>
+            </select>.
+            My address is
             <input type="text" class="form-control auto-grow" placeholder="address" data-bind="value: address, valueUpdate: 'afterkeydown', attr: {size: address().length || 'address'.length}">.
             I am
-            <input type="text" class="form-control auto-grow" placeholder="marital status" data-bind="value: maritalStatus, valueUpdate: 'afterkeydown', attr: {size: maritalStatus().length || 'marital status'.length}">.
+            <select class="form-control" data-bind="value: maritalStatus">
+              <option value="single" select>single</option>
+              <option value="in_relationship">in a relationship</option>
+              <option value="married">married</option>
+            </select> and there are
+            <select class="form-control" data-bind="value: household_size">
+              <option value="one" select>one</option>
+              <option value="two" select>two</option>
+              <option value="three" select>three</option>
+              <option value="four" select>four</option>
+              <option value="five" select>five</option>
+              <option value="six" select>six</option>
+              <option value="seven" select>seven</option>
+              <option value="eight" select>eight</option>
+              <option value="nine" select>nine</option>
+            </select>
+            people in my household.
             My email address is
             <input type="text" class="form-control auto-grow" placeholder="email" data-bind="value: email, valueUpdate: 'afterkeydown', attr: {size: email().length || 'email'.length}">
-            or you can call me at
+            or you can contact me on
             <input type="text" class="form-control auto-grow" placeholder="phone" data-bind="value: phone, valueUpdate: 'afterkeydown', attr: {size: phone().length || 'phone'.length} ">.
             I am a
             <input type="text" class="form-control auto-grow" placeholder="job" data-bind="value: job, valueUpdate: 'afterkeydown', attr: {size: job().length || 'job'.length}">.

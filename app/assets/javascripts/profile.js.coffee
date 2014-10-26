@@ -17,7 +17,7 @@ class Profile
 
     @motor            = InsureMe.InsuredObjectFactory.motor()
     @home             = InsureMe.InsuredObjectFactory.home()
-
+    @travel           = InsureMe.InsuredObjectFactory.travel()
     @pricing          = new InsureMe.Pricing(this)
 
     @image_large      = ko.computed => @image() + "?type=large"

@@ -11,6 +11,10 @@ class InsuredObjectFactory
     home.claims("0")
     return home
 
+  @travel: ->
+    travel = new InsureMe.InsuredObject('travel',['cover_level','areaOfTravel','startDate','endDate'])
+    return travel
+
 
 window.InsureMe = window.InsureMe || {};
 window.InsureMe.InsuredObjectFactory = InsuredObjectFactory

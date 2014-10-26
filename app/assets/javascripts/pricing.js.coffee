@@ -12,6 +12,7 @@ class Pricing
     enabled = enabled + 1 if @profile.home.enabled()
     enabled = enabled + 1 if @profile.motor.enabled()
     enabled = enabled + 1 if @profile.life.enabled()
+    enabled = enabled + 1 if @profile.travel.enabled()
     console.log("number_of_products",enabled)
     return enabled
 
@@ -20,6 +21,7 @@ class Pricing
     total = total + (235/12) if @profile.home.enabled()
     total = total + (585/12) if @profile.motor.enabled()
     total = total + (324/12) if @profile.life.enabled()
+    total = total + (24/12) if @profile.travel.enabled()
     console.log("total_premium",total)
     return total.toFixed(2)
 

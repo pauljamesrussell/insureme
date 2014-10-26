@@ -26,7 +26,7 @@
             <select class="form-control" data-bind="value: maritalStatus">
               <option value="single" select>single</option>
               <option value="in_relationship">in a relationship</option>
-              <option value="married">in a civil partnership</option>
+              <option value="civil_partnership">in a civil partnership</option>
               <option value="married">married</option>
             </select>.<br/>
 
@@ -41,7 +41,8 @@
               <option value="independent-means">independent means</option>
               <option value="disability">not  employed due to disability</option>
             </select>
-            <span data-bind="if: employment_status() == 'employed' || employment_status() == 'self-employed'"> <br/>in the <input type="text" class="form-control auto-grow" placeholder=" " data-bind="value: industry, valueUpdate: 'afterkeydown', attr: {size: industry().length || ' '.length}"> industry</span>.<br/>
+            <span data-bind="if: employment_status() == 'employed' || employment_status() == 'self-employed'"> <br/>
+            I work in the <input type="text" class="form-control auto-grow" placeholder=" " data-bind="value: industry, valueUpdate: 'afterkeydown', attr: {size: industry().length || ' '.length}"> industry</span>.<br/>
             <span data-bind="if: employment_status() == 'employed' || employment_status() == 'self-employed'">My job is
             <input type="text" class="form-control auto-grow" placeholder=" " data-bind="value: job, valueUpdate: 'afterkeydown', attr: {size: job().length || ' '.length}">.</span>
             

@@ -21,6 +21,10 @@ body.controller_profiles.action_show {
     border-top: 1px solid white;
   }
 
+  .imagebg.inactive {
+    -webkit-filter: blur(2px) grayscale(.5);
+  }
+
   .imagebg {
     background-attachment: fixed;
     background-size: cover;
@@ -43,4 +47,41 @@ body.controller_profiles.action_show {
     .icon { line-height: 120px; text-align: right; }
   }
 
+
+  .price-bar {
+    height: 100px;
+    border-top: 1px solid white;
+    background-color: rgba(0,0,0,0.85);
+    position:fixed;bottom:0px;width:100%;
+    color: white;
+    text-align: right;
+    line-height: 100px;
+    font-size: 60px;
+
+    #per_month {
+      font-size: 18px;
+    }
+    #saving {
+      color: #44FF44;
+    }
+    #base_premium {
+      color: red;
+    }
+
+    .discount {
+      font-size: 25px;
+    }
+
+    .buy {
+      background-color: #44FF44;
+      color: black;
+      height: 45px;
+      font-size: 1ex;
+      line-height: 45px - 12px - 2px;
+      margin-top: -10px;
+    }
+  }
+
+  padding-bottom: 100px;
+  background-color: black;
 }

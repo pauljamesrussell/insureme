@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026015121) do
+ActiveRecord::Schema.define(version: 20141026031450) do
 
   create_table "insurance_details", force: true do |t|
     t.integer  "insurance_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141026015121) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "insurance_type"
+    t.decimal  "price",          precision: 7, scale: 2
   end
 
   add_index "insurances", ["user_id"], name: "index_insurances_on_user_id"

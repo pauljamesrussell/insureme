@@ -19,7 +19,7 @@
             </select>.<br/>
             My address is
             <input type="text" class="form-control auto-grow" placeholder="address" data-bind="value: address, valueUpdate: 'afterkeydown', attr: {size: address().length || 'address'.length}">.<br/>
-            There are
+            There <span data-bind="if: household_size() != 'one'">are</span><span data-bind="if: household_size() == 'one'">is</span>
             <select class="form-control" data-bind="value: household_size">
               <option value="one" select>one</option>
               <option value="two" select>two</option>
@@ -31,7 +31,7 @@
               <option value="eight" select>eight</option>
               <option value="nine" select>nine</option>
             </select>
-            people in my household.<br/>
+            <span data-bind="if: household_size() != 'one'">people</span><span data-bind="if: household_size() == 'one'">person</span> in my household.<br/>
             I am
             <select class="form-control" data-bind="value: maritalStatus">
               <option value="single" select>single</option>
@@ -57,7 +57,7 @@
           <div class="col-md-2 icon">
             <%= image_tag("policy_icons/motoricon.png") %>
           </div>
-          <h1 class="panel-title" data-toggle="collapse" href="#motor-detail">Protect my car</h4>
+          <h1 class="panel-title" data-toggle="collapse" data-bind="click: enable" href="#motor-detail">Protect my car <span class="not_covered"><span data-bind="if: !enabled()"/>(not covered)</h1></h4>
         </div>
       </div>
       <div id="motor-detail" class="panel-collapse collapse">

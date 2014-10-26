@@ -1,5 +1,9 @@
 body.controller_profiles.action_show {
 
+  .not_covered {
+    font-size: 15px;
+  }
+
   .imagebg#top-level {
     background-image: image-url('profilebg.jpg');
     margin-top: -70px;
@@ -22,7 +26,7 @@ body.controller_profiles.action_show {
   }
 
   .imagebg.inactive {
-    -webkit-filter: blur(2px) grayscale(.5);
+    -webkit-filter: grayscale(1);
   }
 
   .imagebg {

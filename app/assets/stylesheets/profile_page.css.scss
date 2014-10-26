@@ -97,3 +97,11 @@ body.controller_profiles.action_show {
   padding-bottom: 100px;
   background-color: black;
 }
+
+body.controller_profiles.action_buy {
+  background-color: #303030;
+  color: white;
+  text-align: center;
+  img { margin-bottom: 50px; margin-top: 5px; }
+  .whoops { font-size: 36px; }
+}

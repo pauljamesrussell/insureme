@@ -1,19 +1,40 @@
 class Pricing
+
   constructor: (profile) ->
     @profile        = profile
+    @total_premium  = ko.computed(@_total_premium,this)
     @saving         = ko.computed(@_saving,this)
     @premium        = ko.computed(@_premium,this)
     @saving_percent = ko.computed(@_saving_percent,this)
 
+  number_of_products: ->
+    enabled = 0
+    enabled = enabled + 1 if @profile.home.enabled()
+    enabled = enabled + 1 if @profile.motor.enabled()
+    console.log("number_of_products",enabled)
+    return enabled
+
+  _total_premium: ->
+    total = 0
+    total = total + (250/12) if @profile.home.enabled()
+    total = total + (400/12) if @profile.motor.enabled()
+    console.log("total_premium",total)
+    return total.toFixed(2)
+
   _premium: ->
-    20.00
+    @total_premium() - @saving()
+
   _saving: ->
-    10.00
+    discounts = [0,0,0.10,0.12,0.14,0.16,0.18,0.20]
+    discount = discounts[@number_of_products()]
+    saving = @total_premium() * (discount)
+    console.log("discount",discount,"saving", saving)
+    return saving.toFixed(2)
+
 
   _saving_percent: ->
     if @premium() > 0
-      total = (@premium() + @saving())
-      Math.round((@saving() / total) * 100)
+      Math.round((@saving() / @total_premium()) * 100)
     else
       0
 

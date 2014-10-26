@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, 
          :omniauthable, :omniauth_providers => [:facebook]
-  has_many :insurances		 
-
+  has_many :insurances,:dependent => :destroy		 
+  attr_accessor :totalPrice
   def self.from_omniauth(auth)  
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -22,5 +22,13 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+  
+  def self.totalPrice
+    result =0
+	if(insurances != nil)
+		insurances.each { |insurance| result+= insurance.price}
+	end
+	result
   end
 end

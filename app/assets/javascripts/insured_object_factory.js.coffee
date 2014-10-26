@@ -14,6 +14,9 @@ class InsuredObjectFactory
   @travel: ->
     travel = new InsureMe.InsuredObject('travel',['cover_level','areaOfTravel','startDate','endDate'])
     return travel
+  @life: ->
+    life = new InsureMe.InsuredObject('life',['cover_type','cover_level','term','smoker','medical_conditions'])
+    return life
 
 
 window.InsureMe = window.InsureMe || {};

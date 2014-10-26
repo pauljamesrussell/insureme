@@ -25,8 +25,17 @@ body.controller_profiles.action_show {
     border-top: 1px solid white;
   }
 
-  .imagebg#travel {
+  
+    .imagebg#travel {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('travelpicture.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    border-top: 1px solid white;
+  }
+
+  .imagebg#life {
+    // background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('lifebg.jpg');
+    background-image: image-url('lifebg.jpg');
     background-attachment: fixed;
     background-size: cover;
     border-top: 1px solid white;

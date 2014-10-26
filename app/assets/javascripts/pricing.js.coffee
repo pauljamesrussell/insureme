@@ -11,18 +11,20 @@ class Pricing
     enabled = 0
     enabled = enabled + 1 if @profile.home.enabled()
     enabled = enabled + 1 if @profile.motor.enabled()
+    enabled = enabled + 1 if @profile.life.enabled()
     console.log("number_of_products",enabled)
     return enabled
 
   _total_premium: ->
     total = 0
-    total = total + (250/12) if @profile.home.enabled()
-    total = total + (400/12) if @profile.motor.enabled()
+    total = total + (235/12) if @profile.home.enabled()
+    total = total + (585/12) if @profile.motor.enabled()
+    total = total + (324/12) if @profile.life.enabled()
     console.log("total_premium",total)
     return total.toFixed(2)
 
   _premium: ->
-    @total_premium() - @saving()
+    (@total_premium() - @saving()).toFixed(2)
 
   _saving: ->
     discounts = [0,0,0.10,0.12,0.14,0.16,0.18,0.20]

@@ -13,17 +13,37 @@ body {
 
   div.jumbotron {
     background: none;
-    text-align: center;
   }
 
   .low-profile {
-    &.large {
+    &.low-profile-small {
+      line-height: 21px + 10px;
+      input {
+        font-size: 21px;
+        height: 21px + 10px;
+        padding: 0px;
+        padding-bottom: 2px;
+        margin-top: -2px;  
+      }
+      select {
+        font-size: 21px;
+      }
+    }
+    
+
+    &.low-profile-large {
       font-size: 32px;
       line-height: 42px;
       input {
         font-size: 32px;
         height: 32px + 10px;
-        width: auto;
+        padding: 0px;
+        padding-bottom: 5px;
+        margin-top: -10px;
+      }
+      select {
+        font-size: 32px;
+        height: 32px + 10px;
         padding: 0px;
         padding-bottom: 5px;
         margin-top: -10px;
@@ -41,7 +61,17 @@ body {
       &:-ms-input-placeholder { color: #DDD; } /* ie */
       &:-moz-placeholder { color: #DDD; }
     }
-    text-align: center;
+
+    select {
+      background: none;
+      color: white;
+      border-radius: 0px;
+      border: none;
+      -webkit-appearance: none;
+      border-bottom: 1px solid white;
+      padding-top: 0px;
+      padding-bottom: 5px;
+    }
   }
 
   .navbar { 

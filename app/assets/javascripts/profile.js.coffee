@@ -3,14 +3,17 @@ class Profile
     @first_name       = ko.observable("")
     @surname          = ko.observable("")
     @image            = ko.observable("")
-    @age              = ko.observable("21")
+    @age              = ko.observable("")
     @gender           = ko.observable("")
     @address          = ko.observable("")
     @maritalStatus    = ko.observable("")
     @email            = ko.observable("")
     @phone            = ko.observable("")
     @job              = ko.observable("")
+    @household_size   = ko.observable("")
 
+    @motor            = InsureMe.InsuredObjectFactory.motor()
+    @home             = InsureMe.InsuredObjectFactory.home()
 
     @image_large      = ko.computed => @image() + "?type=large"
     

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025212512) do
+ActiveRecord::Schema.define(version: 20141026015121) do
 
   create_table "insurance_details", force: true do |t|
     t.integer  "insurance_id"
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20141025212512) do
   add_index "insurance_details", ["insurance_id"], name: "index_insurance_details_on_insurance_id"
 
   create_table "insurances", force: true do |t|
-    t.string   "type"
     t.boolean  "enabled"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "insurance_type"
   end
 
   add_index "insurances", ["user_id"], name: "index_insurances_on_user_id"

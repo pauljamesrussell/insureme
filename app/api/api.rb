@@ -20,7 +20,13 @@ class API < Grape::API
   resource :profile do
     desc "Return the user's profile"
     get do
-      current_user
+	
+	 user = User.includes(:insurances, insurances: [:insurance_details]).where(id: current_user.id)
+	 jsonVal = user.to_json(:include => { :insurances => {
+                                 :include => { :insurance_details => {
+                                               :only => [:name,:value]	 } },
+                                 :only => :insurance_type } })
+	 JSON.parse(jsonVal)
     end
   end
   
@@ -28,6 +34,32 @@ class API < Grape::API
     desc "Return the user's insurances"
     get do
       current_user.insurances
+    end
+  end
+
+  resource :buy do
+    desc "Return the user's profile"
+    post do
+		data = JSON.parse(params['data'].to_json)
+  	    current_user.insurances.delete_all
+		current_user.save
+		current_user.insurances = Array.new
+		data.each do |x|
+			insurance = Insurance.new
+			insurance.insurance_type=x["type"]
+			insurance.enabled = true
+			insurance.insurance_details = Array.new
+			puts x["type"] 
+			x["details"].each do |key, value|
+				insuranceDetail = InsuranceDetail.new
+				insuranceDetail.name = key
+				insuranceDetail.value = value
+				insurance.insurance_details << insuranceDetail	
+			puts  key
+			puts  value
+			end
+			current_user.insurances << insurance
+		end	
     end
   end
   

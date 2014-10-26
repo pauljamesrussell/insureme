@@ -7,16 +7,20 @@
       <div class="col-md-8 col-md-offset-2">
         <form class="form-inline">
           <p class="lead low-profile low-profile-large">
-            My name is
+            My name is 
+            <select class="form-control" data-bind="value: title">
+              <option value="Mr" select>one</option>
+              <option value="Ms" select>two</option>
+              <option value="Miss" select>three</option>
+              <option value="Mrs" select>four</option>
+              <option value="Dr (Male)" select>five</option>
+              <option value="Dr (Female)" select>six</option>
+            </select>
             <input type="text" class="form-control auto-grow" placeholder="first name" data-bind="value: first_name, valueUpdate: 'afterkeydown', attr: {size: first_name().length || 'first name'.length}">
             <input type="text" class="form-control auto-grow" placeholder="surname" data-bind="value: surname, valueUpdate: 'afterkeydown', attr: {size: surname().length || 'surname'.length}">.<br/>
             I am
-            <input type="text" class="form-control auto-grow" placeholder="age" data-bind="value: age, valueUpdate: 'afterkeydown', attr: {size: age().length || 'age'.length}">
-            years old and 
-            <select class="form-control" data-bind="value: gender">
-              <option value="male" select>male</option>
-              <option value="female">female</option>
-            </select>.<br/>
+            <input type="text" class="form-control auto-grow" placeholder=" " data-bind="value: age, valueUpdate: 'afterkeydown', attr: {size: age().length || ' '.length}">
+            years old.<br/>
             My address is
             <input type="text" class="form-control auto-grow" placeholder="address" data-bind="value: address, valueUpdate: 'afterkeydown', attr: {size: address().length || 'address'.length}">.<br/>
             There <span data-bind="if: household_size() != 'one'">are</span><span data-bind="if: household_size() == 'one'">is</span>

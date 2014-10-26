@@ -137,13 +137,67 @@
     </div>
   </div>
   <!-- /ko -->
+
+  <!-- ko with: life -->
+  <div class="imagebg" id="life" data-bind="css: { inactive: !enabled() }">
+    <div class="container">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-2 icon">
+            <%= image_tag("policy_icons/lifeicon.png") %>
+          </div>
+          <h1 class="panel-title" data-toggle="collapse" data-bind="click: toggle_enabled" href="#life-detail">Protect my life <span class="not_covered"><span data-bind="if: !enabled()"/>(not covered)</h1></h4>
+        </div>
+      </div>
+      <div id="life-detail" class="panel-collapse collapse">
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <form class="form-inline">
+              <p class="lead low-profile low-profile-small">
+                I want to protect my
+                <select class="form-control" data-bind="value: cover_type">
+                  <option value="term">family</option>
+                  <option value="decreasing" select>mortgage</option>
+                  <option value="term_mort">family and mortgage</option>
+                </select>.<br/>
+                I need
+                <select class="form-control" data-bind="value: cover_level">
+                  <option value="50000">£50,000</option>
+                  <option value="100000" select>£100,000</option>
+                  <option value="150000" select>£150,000</option>
+                  <option value="200000" select>£200,000</option>
+                  <option value="250000" select>£250,000</option>
+                </select> of cover over
+                <select class="form-control" data-bind="value: term">
+                  <option value="10">10</option>
+                  <option value="15" select>15</option>
+                  <option value="20" select>20</option>
+                  <option value="25" select>25</option>
+                  <option value="30" select>30</option>
+                </select> years.<br/>
+                I <select class="form-control" data-bind="value: smoker">
+                  <option value="no">don't</option>
+                  <option value="yes">do</option>
+                </select> smoke, and I <select class="form-control" data-bind="value: medical_conditions">
+                  <option value="no">don't</option>
+                  <option value="yes">do</option>
+                </select> have pre-existing health conditions.<br/>
+                I would like my cover to start <input type="text" class="form-control auto-grow" placeholder="mm/dd/yyyy" data-bind="value: cover_start, valueUpdate: 'afterkeydown', attr: {size: cover_start().length || 'mm/dd/yyyy'.length}">.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /ko -->
 <div>
 
 <div class="price-bar" data-bind="with: pricing">
   <div class="container">
     <span class="discount">You've saved <span id="saving">£<span data-bind="text: saving">0.00</span> (%<span data-bind="text: saving_percent">0</span>)</span></span>
     <span class="quote"><span id="price">£<span data-bind="text: premium">0.00</span></span><span id="per_month">/month</span></span>
-    <a class="buy btn btn-large btn-success">Buy</a>
+    <a class="buy btn btn-large btn-success">Insure<b><%= current_user.first_name %> &gt;&gt;</b></a>
   </div>
 </div>
 

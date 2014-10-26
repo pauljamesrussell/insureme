@@ -11,6 +11,10 @@ class InsuredObjectFactory
     home.claims("0")
     return home
 
+  @life: ->
+    life = new InsureMe.InsuredObject('life',['cover_type','cover_level','term','smoker','medical_conditions'])
+    return life
+
 
 window.InsureMe = window.InsureMe || {};
 window.InsureMe.InsuredObjectFactory = InsuredObjectFactory

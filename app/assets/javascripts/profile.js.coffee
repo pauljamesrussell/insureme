@@ -17,6 +17,7 @@ class Profile
 
     @motor            = InsureMe.InsuredObjectFactory.motor()
     @home             = InsureMe.InsuredObjectFactory.home()
+    @life             = InsureMe.InsuredObjectFactory.life()
 
     @pricing          = new InsureMe.Pricing(this)
 

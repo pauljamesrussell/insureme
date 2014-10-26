@@ -26,7 +26,7 @@ class API < Grape::API
                                  :include => { :insurance_details => {
                                                :only => [:name,:value]	 } },
                                  :only => [:insurance_type,:price] } },:only => [:email,:first_name,:surname,:image])
-	 JSON.parse(jsonVal)
+	 JSON.parse(jsonVal).first
     end
   end
   

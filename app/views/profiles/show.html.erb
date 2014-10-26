@@ -9,12 +9,10 @@
           <p class="lead low-profile low-profile-large">
             My name is 
             <select class="form-control" data-bind="value: title">
-              <option value="Mr" select>one</option>
-              <option value="Ms" select>two</option>
-              <option value="Miss" select>three</option>
-              <option value="Mrs" select>four</option>
-              <option value="Dr (Male)" select>five</option>
-              <option value="Dr (Female)" select>six</option>
+              <option value="Mr">Mr</option>
+              <option value="Ms">Ms</option>
+              <option value="Miss">Miss</option>
+              <option value="Mrs">Mrs</option>
             </select>
             <input type="text" class="form-control auto-grow" placeholder="first name" data-bind="value: first_name, valueUpdate: 'afterkeydown', attr: {size: first_name().length || 'first name'.length}">
             <input type="text" class="form-control auto-grow" placeholder="surname" data-bind="value: surname, valueUpdate: 'afterkeydown', attr: {size: surname().length || 'surname'.length}">.<br/>
@@ -23,27 +21,28 @@
             years old.<br/>
             My address is
             <input type="text" class="form-control auto-grow" placeholder="address" data-bind="value: address, valueUpdate: 'afterkeydown', attr: {size: address().length || 'address'.length}">.<br/>
-            There <span data-bind="if: household_size() != 'one'">are</span><span data-bind="if: household_size() == 'one'">is</span>
-            <select class="form-control" data-bind="value: household_size">
-              <option value="one" select>one</option>
-              <option value="two" select>two</option>
-              <option value="three" select>three</option>
-              <option value="four" select>four</option>
-              <option value="five" select>five</option>
-              <option value="six" select>six</option>
-              <option value="seven" select>seven</option>
-              <option value="eight" select>eight</option>
-              <option value="nine" select>nine</option>
-            </select>
-            <span data-bind="if: household_size() != 'one'">people</span><span data-bind="if: household_size() == 'one'">person</span> in my household.<br/>
             I am
             <select class="form-control" data-bind="value: maritalStatus">
               <option value="single" select>single</option>
               <option value="in_relationship">in a relationship</option>
+              <option value="married">in a civil partnership</option>
               <option value="married">married</option>
             </select>.<br/>
-            My job is
-            <input type="text" class="form-control auto-grow" placeholder=" " data-bind="value: job, valueUpdate: 'afterkeydown', attr: {size: job().length || ' '.length}">.<br/>
+
+            My employment status is
+            <select class="form-control" data-bind="value: employment_status">
+              <option value="employed" select>employed</option>
+              <option value="self-employed">self-employed</option>
+              <option value="retired">retired</option>
+              <option value="unemployed">unemployed</option>
+              <option value="full-time-education">in full time education</option>
+              <option value="household-duties">household duties</option>
+              <option value="independent-means">independent means</option>
+              <option value="disability">not  employed due to disability</option>
+            </select>
+            <span data-bind="if: employment_status() == 'employed' || employment_status() == 'self-employed'"> <br/>in the <input type="text" class="form-control auto-grow" placeholder=" " data-bind="value: industry, valueUpdate: 'afterkeydown', attr: {size: industry().length || ' '.length}"> industry</span>.<br/>
+            <span data-bind="if: employment_status() == 'employed' || employment_status() == 'self-employed'">My job is
+            <input type="text" class="form-control auto-grow" placeholder=" " data-bind="value: job, valueUpdate: 'afterkeydown', attr: {size: job().length || ' '.length}">.</span>
             
           </p>
         </form>
@@ -61,7 +60,7 @@
           <div class="col-md-2 icon">
             <%= image_tag("policy_icons/motoricon.png") %>
           </div>
-          <h1 class="panel-title" data-toggle="collapse" data-bind="click: enable" href="#motor-detail">Protect my car <span class="not_covered"><span data-bind="if: !enabled()"/>(not covered)</h1></h4>
+          <h1 class="panel-title" data-toggle="collapse" data-bind="click: toggle_enabled" href="#motor-detail">Protect my car <span class="not_covered"><span data-bind="if: !enabled()"/>(not covered)</h1></h4>
         </div>
       </div>
       <div id="motor-detail" class="panel-collapse collapse">
@@ -76,15 +75,15 @@
                   <option value="3">three cars</option>
                   <option value="4">four cars</option>
                   <option value="5">five cars</option>
-                </select>.
+                </select>.<br/>
                 My registration number is
-                <input type="text" class="form-control auto-grow" placeholder="registration number" data-bind="value: reg_number, valueUpdate: 'afterkeydown', attr: {size: reg_number().length || 'registration number'.length}">
+                <input type="text" class="form-control auto-grow" placeholder="registration number" data-bind="value: reg_number, valueUpdate: 'afterkeydown', attr: {size: reg_number().length || 'registration number'.length}">.<br/>
                 I want
                 <select class="form-control" data-bind="value: cover_level">
                   <option value="comprehensive" select>comprehensive</option>
                   <option value="tpft">third party, fire and theft</option>
                 </select>
-                cover. 
+                cover.<br/>
                 I would like my cover to start <input type="text" class="form-control auto-grow" placeholder="mm/dd/yyyy" data-bind="value: cover_start, valueUpdate: 'afterkeydown', attr: {size: cover_start().length || 'mm/dd/yyyy'.length}">.
               </p>
             </form>
@@ -95,14 +94,15 @@
   </div>
   <!-- /ko -->
 
-  <div class="imagebg" id="home" data-bind="with: home">
+  <!-- ko with: home -->
+  <div class="imagebg" id="home" data-bind="css: { inactive: !enabled() }">
     <div class="container">
       <div class="panel-heading">
         <div class="row">
           <div class="col-md-2 icon">
             <%= image_tag("policy_icons/buildingicon.png") %>
           </div>
-          <h1 class="panel-title" data-toggle="collapse" href="#home-detail">Protect my home</h4>
+          <h1 class="panel-title" data-toggle="collapse" data-bind="click: toggle_enabled" href="#home-detail">Protect my home <span class="not_covered"><span data-bind="if: !enabled()"/>(not covered)</h1></h4>
         </div>
       </div>
       <div id="home-detail" class="panel-collapse collapse">
@@ -112,28 +112,21 @@
               <p class="lead low-profile low-profile-small">
                 I want
                 <select class="form-control" data-bind="value: cover_level">
-                  <option value="buildings">building only cover</option>
+                  <option value="buildings">buildings only cover</option>
                   <option value="building_and_contents" select>building and contents cover</option>
                   <option value="contents">contents cover</option>
                 </select>
-                cover for my
+                cover.<br/>
+                I want to cover my
                 <select class="form-control" data-bind="value: property">
                   <option value="main_home">home</option>
-                  <option value="second_home" select>second home</option>
-                </select>
-                which I <select class="form-control" data-bind="value: ownership">
+                  <option value="second_home" select>another property</option>
+                </select>.<br/>
+                I <select class="form-control" data-bind="value: ownership">
                   <option value="rent">rent</option>
                   <option value="own" select>own</option>
-                </select>.
-                I occupy my property during the
-                <select class="form-control" data-bind="value: occupied">
-                  <option value="day">day</option>
-                  <option value="night" select>night</option>
-                  <option value="both" select>night and day</option>
-                </select>
-                and have made 
-                <input type="text" class="form-control auto-grow" placeholder="claims" data-bind="value: claims, valueUpdate: 'afterkeydown', attr: {size: claims().length || 'claims'.length}">
-                claims in the last five years. 
+                  <option value="mortgage" select>have a mortgate on</option>
+                </select> the property.<br/>
                 I would like my cover to start <input type="text" class="form-control auto-grow" placeholder="mm/dd/yyyy" data-bind="value: cover_start, valueUpdate: 'afterkeydown', attr: {size: cover_start().length || 'mm/dd/yyyy'.length}">.
               </p>
             </form>
@@ -142,6 +135,7 @@
       </div>
     </div>
   </div>
+  <!-- /ko -->
 <div>
 
 <div class="price-bar" data-bind="with: pricing">

@@ -9,8 +9,8 @@ class InsuredObject
   add_attribute: (attribute) ->
     @[attribute]  = ko.observable("");
 
-  enable: ->
-    @enabled(true)
+  toggle_enabled: ->
+    @enabled(!@enabled())
 
 
 window.InsureMe = window.InsureMe || {};
